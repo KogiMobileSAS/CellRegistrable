@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5B6BD05F1CEBD055006C9218 /* CellRegistrable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6BD0541CEBD055006C9218 /* CellRegistrable.framework */; };
-		5B6BD0711CEBD10B006C9218 /* CellRegistrable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6BD06F1CEBD10B006C9218 /* CellRegistrable.h */; };
+		5B6BD0711CEBD10B006C9218 /* CellRegistrable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6BD06F1CEBD10B006C9218 /* CellRegistrable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6BD0761CEBD11E006C9218 /* CellRegistrableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BD0741CEBD11E006C9218 /* CellRegistrableTests.swift */; };
+		5B6BD07B1CEBD3B1006C9218 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BD07A1CEBD3B1006C9218 /* CellConfigurable.swift */; };
+		5B6BD07D1CEBD3D6006C9218 /* CellRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BD07C1CEBD3D6006C9218 /* CellRegistrable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		5B6BD0701CEBD10B006C9218 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B6BD0741CEBD11E006C9218 /* CellRegistrableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellRegistrableTests.swift; sourceTree = "<group>"; };
 		5B6BD0751CEBD11E006C9218 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B6BD07A1CEBD3B1006C9218 /* CellConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		5B6BD07C1CEBD3D6006C9218 /* CellRegistrable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellRegistrable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		5B6BD06E1CEBD10B006C9218 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5B6BD07A1CEBD3B1006C9218 /* CellConfigurable.swift */,
+				5B6BD07C1CEBD3D6006C9218 /* CellRegistrable.swift */,
 				5B6BD0781CEBD136006C9218 /* Supporting Files */,
 			);
 			path = Source;
@@ -210,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6BD07D1CEBD3D6006C9218 /* CellRegistrable.swift in Sources */,
+				5B6BD07B1CEBD3B1006C9218 /* CellConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +334,7 @@
 		5B6BD0691CEBD055006C9218 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -336,12 +345,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kogimobile.CellRegistrable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5B6BD06A1CEBD055006C9218 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -358,7 +369,7 @@
 		5B6BD06C1CEBD055006C9218 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = CellRegistrableTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kogimobile.CellRegistrableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -368,7 +379,7 @@
 		5B6BD06D1CEBD055006C9218 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = CellRegistrableTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kogimobile.CellRegistrableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
