@@ -8,6 +8,13 @@
 
 import UIKit
 
+/**
+ The `CellRegistrable` protocol is adopted objects that want to provide an easy
+ way to register the cells that conform to the `CellConfigurable` protocol.
+ 
+ This framework adds conformance to the protocol to `UITableView` and 
+ `UICollectionView`
+ */
 public protocol CellRegistrable {
     func registerCell(cell: CellConfigurable.Type)
 }
