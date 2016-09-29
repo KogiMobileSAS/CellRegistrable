@@ -28,7 +28,7 @@ public protocol CellConfigurable {
 
 extension CellConfigurable {
     public static var reuseIdentifier: String {
-        return String(self)
+        return String(describing: self)
     }
     
     public static var nib: UINib {

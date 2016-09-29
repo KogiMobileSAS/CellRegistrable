@@ -16,17 +16,17 @@ import UIKit
  `UICollectionView`
  */
 public protocol CellRegistrable {
-    func registerCell(cell: CellConfigurable.Type)
+    func registerCell(_ cell: CellConfigurable.Type)
 }
 
 extension UITableView: CellRegistrable {
-    public func registerCell(cell: CellConfigurable.Type) {
-        registerNib(cell.nib, forCellReuseIdentifier: cell.reuseIdentifier)
+    public func registerCell(_ cell: CellConfigurable.Type) {
+        register(cell.nib, forCellReuseIdentifier: cell.reuseIdentifier)
     }
 }
 
 extension UICollectionView: CellRegistrable {
-    public func registerCell(cell: CellConfigurable.Type) {
-        registerNib(cell.nib, forCellWithReuseIdentifier: cell.reuseIdentifier)
+    public func registerCell(_ cell: CellConfigurable.Type) {
+        register(cell.nib, forCellWithReuseIdentifier: cell.reuseIdentifier)
     }
 }
