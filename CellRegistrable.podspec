@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author            = "Kogi Mobile"
   s.source            = { :git => 'https://github.com/KogiMobileSAS/CellRegistrable.git', :tag => s.version }
 
-  s.platform          = :ios, "10.3"
+  s.platform          = :ios, "10.1"
 
   s.source_files      = 'Source/*.swift'
 end
