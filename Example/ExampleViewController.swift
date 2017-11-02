@@ -13,28 +13,36 @@ class ExampleViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    
+
+    init() {
+        super.init(nibName: String(describing: ExampleViewController.self), bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tableView.registerCell(ExampleTableViewCell)
+        tableView.registerCell(ExampleTableViewCell.self)
         tableView.dataSource = self
     }
 }
 
 extension ExampleViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(
-            ExampleTableViewCell.reuseIdentifier,
-            forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: ExampleTableViewCell.reuseIdentifier,
+            for: indexPath)
         
         if let exampleCell = cell as? ExampleTableViewCell {
             exampleCell.exampleLabel.text = "Cell \(indexPath.row)"
